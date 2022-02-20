@@ -1,7 +1,9 @@
 import React from "react";
-import data from "./data";
-import Product from "./components/Product";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import HomeScreen from "./screens/HomeScreen";
+import ProductScreen from "./screens/ProductScreen";
+import SigninScreen from "./screens/SigninScreen";
+import RegisterScreen from "./screens/RegisterScreen";
 
 function App() {
   return (
@@ -9,23 +11,26 @@ function App() {
       <div className="grid-container">
         <header className="row">
           <div>
-            <a className="brand" href="index.html">
+            <Link className="brand" to="/">
               Spice
-            </a>
+            </Link>
           </div>
           <div>
-            <a href="cart.html">My Cart</a>
-            <a href="signin.html">Sign In</a>
+            <Link to="/cart">My Cart</Link>
+            <Link to="/signin">Sign In</Link>
           </div>
         </header>
         <main>
-          <div>
-            <div className="row center">
-              {data.products.map((product) => (
-                <Product key={product._id} product={product} />
-              ))}
-            </div>
-          </div>
+          <Routes>
+            <Route
+              path="/product/:id"
+              element={<ProductScreen />}
+              exact
+            ></Route>
+            <Route path="/signin" element={<SigninScreen />}></Route>
+            <Route path="/register" element={<RegisterScreen />}></Route>
+            <Route path="/" element={<HomeScreen />} exact></Route>
+          </Routes>
         </main>
         <footer className="row center">All right reserved</footer>
       </div>
