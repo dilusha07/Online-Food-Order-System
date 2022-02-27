@@ -41,7 +41,7 @@ const data = {
       description: "Fresh foods",
     },
     {
-      _id: "1",
+      _id: "6",
       name: "Rice",
       category: "Veg",
       image: "/images/p1.jpg",
@@ -49,7 +49,7 @@ const data = {
       description: "Fresh foods",
     },
     {
-      _id: "2",
+      _id: "7",
       name: "Rice",
       category: "Veg",
       image: "/images/p1.jpg",
@@ -57,7 +57,7 @@ const data = {
       description: "Fresh foods",
     },
     {
-      _id: "3",
+      _id: "8",
       name: "Rice",
       category: "Veg",
       image: "/images/p1.jpg",
@@ -65,7 +65,7 @@ const data = {
       description: "Fresh foods",
     },
     {
-      _id: "4",
+      _id: "9",
       name: "Rice",
       category: "Veg",
       image: "/images/p1.jpg",
@@ -73,7 +73,7 @@ const data = {
       description: "Fresh foods",
     },
     {
-      _id: "5",
+      _id: "10",
       name: "Rice",
       category: "Veg",
       image: "/images/p1.jpg",

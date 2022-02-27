@@ -4,8 +4,11 @@ import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
 import SigninScreen from "./screens/SigninScreen";
 import RegisterScreen from "./screens/RegisterScreen";
+import { useSelector } from "react-redux";
 
 function App() {
+  const userSignin = useSelector((state) => state.userSignin);
+  const { userInfo } = userSignin;
   return (
     <BrowserRouter>
       <div className="grid-container">
@@ -17,7 +20,11 @@ function App() {
           </div>
           <div>
             <Link to="/cart">My Cart</Link>
-            <Link to="/signin">Sign In</Link>
+            {userInfo ? (
+              <Link to="#">{userInfo.name}</Link>
+            ) : (
+              <Link to="/signin">Sign In</Link>
+            )}
           </div>
         </header>
         <main>
