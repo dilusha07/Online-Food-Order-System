@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { register } from "../actions/UserActions";
 
 export default function RegisterScreen(props) {
   const [name, setName] = useState("");
@@ -7,9 +9,25 @@ export default function RegisterScreen(props) {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
+  // const redirect = props.location.search
+  //   ? props.location.search.split("=")[1]
+  //   : "/";
+
+  // const userRegister = useSelector((state) => state.userRegister);
+  // const { userInfo } = userRegister;
+
+  const dispatch = useDispatch();
   const submitHandler = (e) => {
     e.preventDefault();
+    dispatch(register(name, email, password));
   };
+
+  // useEffect(() => {
+  //   if (userInfo) {
+  //     props.history.push(redirect);
+  //   }
+  // }, [props.history, redirect, userInfo]);
+
   return (
     <div>
       <form className="form" onSubmit={submitHandler}>
